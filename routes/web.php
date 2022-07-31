@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Front
 Route::get('/', 'App\Http\Controllers\Main\IndexController');
+
+//Back
+Route::get('/admin', 'App\Http\Controllers\Admin\Main\IndexController');
 
 Auth::routes();
 
