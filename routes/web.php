@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Front
+Route::get('/', 'App\Http\Controllers\Main\IndexController');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Back
+Route::get('/admin', 'App\Http\Controllers\Admin\Main\IndexController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
