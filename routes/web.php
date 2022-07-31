@@ -18,7 +18,8 @@ Route::get('/', 'App\Http\Controllers\Main\IndexController');
 
 //Back
 Route::get('/admin', 'App\Http\Controllers\Admin\Main\IndexController');
-
+Route::get('/admin/categories', 'App\Http\Controllers\Admin\Category\IndexController')->name('admin.category.index');
+Route::get('/admin/categories/create', 'App\Http\Controllers\Admin\Category\CreateController')->name('admin.category.create');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
