@@ -18,6 +18,7 @@ Route::get('/', 'App\Http\Controllers\Main\IndexController');
 
 //Back
 Route::get('/admin', 'App\Http\Controllers\Admin\Main\IndexController');
+Route::get('/admin/categories', 'App\Http\Controllers\Admin\Category\IndexController');
 
 Auth::routes();
 
