@@ -22,6 +22,9 @@ Route::get('/admin/categories', 'App\Http\Controllers\Admin\Category\IndexContro
 Route::get('/admin/categories/create', 'App\Http\Controllers\Admin\Category\CreateController')->name('admin.category.create');
 Route::post('/admin/categories', 'App\Http\Controllers\Admin\Category\StoreController')->name('admin.category.store');
 Route::get('/admin/categories/{category}', 'App\Http\Controllers\Admin\Category\ShowController')->name('admin.category.show');
+Route::get('/admin/categories/{category}/edit', 'App\Http\Controllers\Admin\Category\EditController')->name('admin.category.edit');
+Route::patch('/admin/categories/{category}', 'App\Http\Controllers\Admin\Category\UpdateController')->name('admin.category.update');
+Route::delete('/admin/categories/{category}', 'App\Http\Controllers\Admin\Category\DeleteController')->name('admin.category.delete');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
